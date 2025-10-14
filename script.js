@@ -1,4 +1,4 @@
-// Global quotes array with text and category
+// Global quotes array
 const quotes = [
   { text: "The best way to predict the future is to create it.", category: "Motivation" },
   { text: "In the middle of every difficulty lies opportunity.", category: "Inspiration" },
@@ -24,13 +24,12 @@ function addQuote() {
   const newQuoteCategory = document.getElementById("newQuoteCategory").value.trim();
 
   if (newQuoteText && newQuoteCategory) {
-    // Add new quote to array
     quotes.push({
       text: newQuoteText,
       category: newQuoteCategory
     });
 
-    // Clear inputs
+    // Clear input fields
     document.getElementById("newQuoteText").value = "";
     document.getElementById("newQuoteCategory").value = "";
 
@@ -39,8 +38,8 @@ function addQuote() {
   }
 }
 
-// Event listener for the “Show New Quote” button
+// Event listener for “Show New Quote” button
 document.getElementById("newQuote").addEventListener("click", displayRandomQuote);
 
-// Display one quote when page loads
+// Display one quote on load
 displayRandomQuote();
