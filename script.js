@@ -5,7 +5,7 @@ const quotes = [
   { text: "Do not watch the clock; do what it does. Keep going.", category: "Perseverance" }
 ];
 
-// Function: displayRandomQuote
+// Function: displayRandomQuote (required name)
 function displayRandomQuote() {
   const quoteDisplay = document.getElementById("quoteDisplay");
 
@@ -20,7 +20,7 @@ function displayRandomQuote() {
   quoteDisplay.textContent = `"${randomQuote.text}" — ${randomQuote.category}`;
 }
 
-// Function: addQuote
+// Function: addQuote (required name)
 function addQuote() {
   const newQuoteText = document.getElementById("newQuoteText").value.trim();
   const newQuoteCategory = document.getElementById("newQuoteCategory").value.trim();
@@ -32,16 +32,15 @@ function addQuote() {
 
   quotes.push({ text: newQuoteText, category: newQuoteCategory });
 
-  // Clear input fields
+  // Clear inputs
   document.getElementById("newQuoteText").value = "";
   document.getElementById("newQuoteCategory").value = "";
 
   displayRandomQuote();
 }
 
-// Event listeners
+// Event listener for “Show New Quote” button
 document.getElementById("newQuote").addEventListener("click", displayRandomQuote);
-document.getElementById("addQuoteBtn").addEventListener("click", addQuote);
 
 // Show a quote initially
 displayRandomQuote();
