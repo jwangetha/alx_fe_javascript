@@ -10,7 +10,7 @@ function displayRandomQuote() {
   const quoteDisplay = document.getElementById("quoteDisplay");
 
   if (quotes.length === 0) {
-    quoteDisplay.textContent = "No quotes available.";
+    quoteDisplay.textContent = "No quotes available. Please add one!";
     return;
   }
 
@@ -32,6 +32,7 @@ function addQuote() {
 
   quotes.push({ text: newQuoteText, category: newQuoteCategory });
 
+  // Clear inputs
   document.getElementById("newQuoteText").value = "";
   document.getElementById("newQuoteCategory").value = "";
 
@@ -42,5 +43,5 @@ function addQuote() {
 document.getElementById("newQuote").addEventListener("click", displayRandomQuote);
 document.getElementById("addQuoteBtn").addEventListener("click", addQuote);
 
-// Show initial quote
+// Show an initial quote when the page loads
 displayRandomQuote();
